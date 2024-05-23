@@ -39,6 +39,10 @@ And the command I used to dump database is
   python3 sqlmap.py -u "http://74.225.254.195:2324/getBlogDetail?blog=2&part=content" --dbs --dump -D pclub_secy_task
 ```
 
+![Alt text](images/1.png)
+![Alt text](images/2.png)
+![Alt text](images/3.png)
+
 ### Flag 4: pclub{data_1s_3v3ryth1ng}
 
 #### Writeup:
@@ -48,12 +52,16 @@ In the Users Table userhash is the hash of the username and the password is md5 
 Only 3 users have files when you login!<br>
 To Give a Physical Significance of their Weakness, if they were your window glass, they could be easily broken with a rock. <br>
 I already got the third flag from user kaptaan, now there were two more users which have files in them but decrypting all md5 hasher could be tough so when I logged in using kaptaan i saw what response I am getting in the developers tool of the website
-and got this http://74.225.254.195:2324/getFileList?user=kaptaan so I started changing user parameter one by one and at amansg22 and got an image,I downloaded it by again changing the file parameter to amansg22/ariitk.jpeg in the response I got during downloading flag.txt i.e. http://74.225.254.195:2324/download?file=kaptaan/flag.txt and then at user ritvikg22 I got a txt file named pwn_chall_link.txt. I opened the image which was named ariitk.jpeg and started using common steg tools like strings, exiftool, binwalk, etc. Finally using steghide I found a qr_code.png. Then scanned the qr and got a base64 encoded string Y3B5aG97cW5nbl8xZl8zaTNlbGd1MWF0fQ== which looked like a ceaser cipher message so using an ceaser cipher decoder I got the fourth flag.
+and got this http://74.225.254.195:2324/getFileList?user=kaptaan so I started changing user parameter one by one and at amansg22 and got an image,I downloaded it by again changing the file parameter to amansg22/ariitk.jpeg in the response I got during downloading flag.txt i.e. http://74.225.254.195:2324/download?file=kaptaan/flag.txt and then at user ritvikg22 I got a txt file named pwn_chall_link.txt. I opened the image which was named ariitk.jpeg .<br>
+![Alt text](images/ariitk.jpeg)
+Then I started using common steg tools like strings, exiftool, binwalk, etc. Finally using steghide I found a qr_code.png. Then scanned the qr and got a base64 encoded string Y3B5aG97cW5nbl8xZl8zaTNlbGd1MWF0fQ== which looked like a ceaser cipher message so using an ceaser cipher decoder I got the fourth flag.
 The command I used to get the qr_code.png is
 
 ```bash
   steghide extract -sf ariitk.jpeg
 ```
+qr code:
+![Alt text](images/qr_code.png)
 
 <br><br><br>
 Note :- For the fifth flag I first checked the contents of the txt file which had a pastebin link which consisted of a drive link having a file named whathash<br>
