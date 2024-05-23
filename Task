@@ -1,0 +1,13 @@
+TASK 8 - PClub DVWA
+Description:  A PClub Legend while trying to revamp the PClub Website introduced some vulnerabilities because of his lack of knowledge of InfoSec. After getting to know about the security holes, he tried to save his reputation by saying that He was making a Project for PClub namely PClub DVWA (Damn Vulnerable Web Application) to spread awareness about Cyber Security. But he failed to save his reputation, because the website was already deployed and before it could be replaced by the old and secure Website, Sameer exploited one such Vulnerability and got to know that in the Directory of the website, there was a file routes.txt that stored a list of all routes that would lead anyone to further penetrate into the website and exploit more vulnerabilities. But fortunately, before he could try anything else, the website was taken down. Today the Website is again Hosted ONLY to spread awareness about Cyber Security. 
+Goal: Find all the flags that could be obtained by exploiting the vulnerabilities present.  There are a total of 5 flags (4 Web Exploitation and 1 Cryptopwn ) . 
+
+
+Note: NO Vulnerabilities required brute forcing of  server resources. So don’t use tools like nmap , dirbuster  or Wfuzz.
+Deliverables:
+A Detailed Writeup of what you have done to get all the flags. It should be in Markdown format.
+All the scripts you have used to accomplish the task.
+Website Link : 
+http://74.225.254.195:2324/
+Brownie Points:
+For using Images for illustration in writeup.
